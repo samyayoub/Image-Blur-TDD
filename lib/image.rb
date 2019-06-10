@@ -1,7 +1,7 @@
-Class Image
+class Image
     attr_accessor :data
 
-    def Initialize(data)
+    def initialize(data)
         @data = data
     end
 
@@ -18,16 +18,16 @@ Class Image
     
         cell_array.each do |index|
             # Blurring all lines upward
-            @data [index.first-1][index.last] = 1 if index.first > 0
+            @data[index.first-1][index.last] = 1 if index.first > 0
     
             # Blurring all lines downward
-            @data [index.first+1][index.last] = 1 if index.first < @data.length - 1
+            @data[index.first+1][index.last] = 1 if index.first < @data.length - 1
     
             # Blurring all lines right
-            @data [index.first][index.last+1] = 1 if index.last < @data.first.length - 1
+            @data[index.first][index.last+1] = 1 if index.last < @data.first.length - 1
     
             # Blurring all lines to the left
-            @data [index.first][index.last-1] = 1 if index.last > 0
+            @data[index.first][index.last-1] = 1 if index.last > 0
     
         end
            
